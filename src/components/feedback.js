@@ -19,7 +19,7 @@ class Feedback extends React.Component {
     });
   };
 
-handleIncrementNeutral = () => {
+  handleIncrementNeutral = () => {
     this.setState((prevState) => {
       return {
         neutral: prevState.neutral + 1,
@@ -37,20 +37,18 @@ handleIncrementNeutral = () => {
 
   render() {
     return (
-     
       <div>
-         <Controler
-        onIncrementGood={this.handleIncrementGood}
-        onIncrementNeutral={this.handleIncrementNeutral }
-        onIncrementBad={this.handleIncrementBad}
+        <Controler
+          onIncrementGood={this.handleIncrementGood}
+          onIncrementNeutral={this.handleIncrementNeutral}
+          onIncrementBad={this.handleIncrementBad}
         />
-        
-      <h2>Statistics</h2>
-      <span>Good:{this.state.good}</span>
-      <span>Neutral:{this.state.neutral}</span>
-      <span>Bad:{this.state.bad}</span>
-    </div>
- 
+
+        <h2>Statistics</h2>
+        <span>Good:{this.state.good}</span>
+        <span>Neutral:{this.state.neutral}</span>
+        <span>Bad:{this.state.bad}</span>
+      </div>
     );
   }
 }
