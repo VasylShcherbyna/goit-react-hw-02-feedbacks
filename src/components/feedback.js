@@ -5,9 +5,6 @@ import Notification from "./Notification";
 import Section from "./Section";
 
 class Feedback extends React.Component {
-  static defaultProps = {
-    good: 0,
-  };
 
   state = {
     good: 0,
