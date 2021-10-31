@@ -1,10 +1,6 @@
 import react from "react";
 
-const Controler = ({ onIncrementGood, onIncrementNeutral, onIncrementBad }) => {
-    return (
-      <div>
-        <h1>Please leave feedback</h1>
-        <div>
+const Controler = ({ onIncrementGood, onIncrementNeutral, onIncrementBad }) => (   <div>
           <button type="button" onClick={onIncrementGood}>
             Good
           </button>
@@ -14,9 +10,6 @@ const Controler = ({ onIncrementGood, onIncrementNeutral, onIncrementBad }) => {
           <button type="button" onClick={onIncrementBad}>
             Bad
           </button>
-        </div>
-      </div>
-    );
+        </div>)
 
-};
 export default Controler;

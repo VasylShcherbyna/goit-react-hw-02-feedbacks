@@ -1,5 +1,9 @@
 import React from "react";
-import Controler from "./controler";
+import Controler from "./Controler";
+import Statistics from "./Statistics";
+import Notification from "./Notification";
+import Section from "./Section";
+
 class Feedback extends React.Component {
   static defaultProps = {
     good: 0,
@@ -35,21 +39,58 @@ class Feedback extends React.Component {
     });
   };
 
+  countTotalFeedback = () => {
+    const { good, neutral, bad } = this.state;
+    const total = good + neutral + bad;
+    return total;
+  };
+  // Процент положительных отзывов компании (отображается на странице отзывов о компании на портале) рассчитывается по следующей формуле:
+  // Z = Х / Y * 100%, где:
+  //  Z― процент положительных отзывов;
+  // Х = количество только положительных отзывов (отлично и хорошо) о компании за последние 365 дней;
+  // Y = сумма положительных и негативных отзывов
+
+  // Метод ----Math.round---- выполняет округление до ближайшего целого числа по правилам математического округления.
+
+  countPositiveFeedbackPercentage = () => {
+    const total = this.countTotalFeedback();
+    const pozitiv = Math.round((this.state.good * 100) / total);
+    return pozitiv;
+  };
+
+  
+
   render() {
+    const { handleIncrementGood, handleIncrementBad, handleIncrementNeutral } = this;
+    const { good, neutral, bad } = this.state;
+    const total = this.countTotalFeedback();
+    const pozitiv = this.countPositiveFeedbackPercentage();
     return (
       <div>
-        <Controler
-          onIncrementGood={this.handleIncrementGood}
-          onIncrementNeutral={this.handleIncrementNeutral}
-          onIncrementBad={this.handleIncrementBad}
+        
+        <Section title='Please leave feedback'>
+          <Controler
+          onIncrementGood={handleIncrementGood}
+          onIncrementNeutral={handleIncrementNeutral}
+          onIncrementBad={handleIncrementBad}
         />
-
-        <h2>Statistics</h2>
-        <span>Good:{this.state.good}</span>
-        <span>Neutral:{this.state.neutral}</span>
-        <span>Bad:{this.state.bad}</span>
+        {total === 0 ? (
+          <Notification message='No feedback given' />
+          
+        ) : (
+        <Statistics
+          good={good}
+          neutral={neutral}
+          bad={bad}
+          total={total}
+          pozitiv={pozitiv}
+          />
+        )}
+          </Section>
+          
       </div>
     );
   }
 }
+
 export default Feedback;
