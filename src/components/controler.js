@@ -1,15 +1,16 @@
 import PropTypes from "prop-types";
+import s from "./Feedback.module.css";
 import react from "react";
 
 const Controler = ({ onIncrementGood, onIncrementNeutral, onIncrementBad }) => (
   <div>
-    <button type="button" onClick={onIncrementGood}>
+    <button className={s.good} type="button" onClick={onIncrementGood}>
       Good
     </button>
-    <button type="button" onClick={onIncrementNeutral}>
+    <button className={s.neutral} type="button" onClick={onIncrementNeutral}>
       Neutral
     </button>
-    <button type="button" onClick={onIncrementBad}>
+    <button className={s.bad} type="button" onClick={onIncrementBad}>
       Bad
     </button>
   </div>

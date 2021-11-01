@@ -1,0 +1,46 @@
+.good{
+    margin-right: 10px;
+    background-color: rgb(19, 223, 19);
+    border: 2px solid #050705;
+    font-size: 20px;
+}
+.neutral{
+    margin-right: 10px;
+    background-color: rgb(30, 114, 240);
+    border: 2px solid #090c09;
+    font-size: 20px;
+}
+.bad{
+    background-color: rgb(218, 24, 24);
+    border: 2px solid #131413;
+    font-size: 20px;
+}
+/* --------------Statistics----------- */
+.statisticGood{
+    margin-right: 10px;
+    font-size: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.statisticNeutral{
+    margin-right: 10px;
+    font-size: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.statisticBad{
+margin-right: 10px;
+font-size: 20px;
+font-family: 'Source Sans Pro', sans-serif;
+}
+.statisticTotal{
+    font-size: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.statisticPositive{
+    font-size: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.message{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    color: red;
+}
