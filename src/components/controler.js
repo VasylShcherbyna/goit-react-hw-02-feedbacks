@@ -22,3 +22,4 @@ Controler.propTypes = {
   onIncrementBad: PropTypes.func.isRequired,
 };
 export default Controler;
+// ---
