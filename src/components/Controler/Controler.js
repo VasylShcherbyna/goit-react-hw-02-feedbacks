@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import s from "./Feedback.module.css";
+import s from "../Feedback.module.css";
 import react from "react";
 
 const Controler = ({ onIncrementGood, onIncrementNeutral, onIncrementBad }) => (

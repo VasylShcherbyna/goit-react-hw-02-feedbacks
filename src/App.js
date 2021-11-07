@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Feedback from "./components/Feedback";
+import Feedback from "./components/Feedback/Feedback";
 function App() {
   return (
     <div className="App">

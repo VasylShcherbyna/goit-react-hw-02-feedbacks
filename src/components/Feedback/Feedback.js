@@ -1,8 +1,8 @@
 import React from "react";
-import Controler from "./Controler";
-import Statistics from "./Statistics";
-import Notification from "./Notification";
-import Section from "./Section";
+import Controler from "../Controler/Controler";
+import Statistics from "../Statistics/Statistics";
+import Notification from "../Notification/Notification";
+import Section from "../Section/Section";
 
 class Feedback extends React.Component {
 
